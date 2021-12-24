@@ -1,0 +1,22 @@
+{
+    "name": "football",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.1",
+        "express": "^4.17.1",
+        "express-handlebars": "^6.0.2",
+        "express-handlebars-sections": "^1.0.1",
+        "mongoose": "^6.1.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
