@@ -2,9 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const hbs_sections = require('express-handlebars-sections');
-
+const session = require('express-session');
 const app = express();
 const port = 3000;
+
+app.set('trust proxy', 1); // trust first proxy
+app.use(
+    session({
+        secret: 'keyboard cat',
+        resave: false,
+        saveUninitialized: true,
+        cookie: {},
+    })
+);
 
 const hbs = exphbs.create({
     defaultLayout: 'main',
@@ -22,6 +32,7 @@ app.set('views', './views');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+require('./middlewares/locals.mdw')(app);
 app.get('/', (req, res, next) => {
     res.render('home');
 });
