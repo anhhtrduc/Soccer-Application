@@ -22,6 +22,12 @@ const hbs = exphbs.create({
     partialsDir: './views/partials',
     helpers: {
         section: hbs_sections(),
+        ifStr(s1, s2, options) {
+            if (s1 === s2) {
+                return options.fn(this);
+            }
+            return options.inverse(this);
+        },
     },
 });
 
@@ -36,7 +42,20 @@ require('./middlewares/locals.mdw')(app);
 app.get('/', (req, res, next) => {
     res.render('home');
 });
+// app.use((req, res) => {
+//     res.render('404', { layout: false });
+// });
+
+// app.use((err, req, res, next) => {
+//     console.log(err.stack);
+//     res.status(500).render('500', { layout: false });
+// });
+app.use(express.static('public'));
 
 app.use('/account', require('./routes/account.route'));
+app.use('/league', require('./routes/league.route'));
+app.use('/admin', require('./routes/result.route'));
+app.use('/statistic', require('./routes/statistic.route'));
+app.use('/', require('./routes/search.route'));
 
 app.listen(port, () => console.log(`Server start on port ${port}!`));
