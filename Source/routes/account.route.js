@@ -24,7 +24,6 @@ router.post('/login', async (req, res) => {
             error: 'Invalid username or password.',
         });
     }
-    delete user.password;
     req.session.isAuthenticated = true;
     req.session.authUser = user;
     const url = req.query.retUrl || '/';
@@ -73,6 +72,34 @@ const restrict = require('../middlewares/auth.mdw');
 router.get('/profile', restrict, (req, res) => {
     // console.log(req.session.authUser);
     res.render('vwAccount/profile');
+});
+
+router.post('/profile', restrict, async (req, res) => {
+    const { email, fullname, phone, manager, stadium, president } = req.body;
+    const user = await User.findOneAndUpdate(
+        { email: email },
+        {
+            $set: {
+                fullname: fullname,
+                phone: phone,
+                manager: manager,
+                stadium: stadium,
+                president: president,
+            },
+        },
+        { new: true }
+        // (err, data) => {
+        //     if (err) {
+        //         console.log(404);
+        //     } else {
+        //         console.log('Done');
+        //     }
+        // }
+    );
+    await user.save();
+    req.session.isAuthenticated = true;
+    req.session.authUser = user;
+    res.redirect('/account/profile');
 });
 
 router.get('/logout', restrict, (req, res) => {

@@ -8,6 +8,9 @@ const userSchema = new mongoose.Schema(
             unique: true,
             index: true,
         },
+        avatar: {
+            type: String,
+        },
         fullname: {
             type: String,
             required: true,
@@ -27,6 +30,15 @@ const userSchema = new mongoose.Schema(
         role: {
             type: Number,
             required: true,
+        },
+        stadium: {
+            type: String,
+        },
+        manager: {
+            type: String,
+        },
+        president: {
+            type: String,
         },
     },
     {
