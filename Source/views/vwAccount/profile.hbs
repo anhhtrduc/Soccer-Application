@@ -1,0 +1,75 @@
+<div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-2 "></div>
+            <div class="col-sm-2">
+                <a href='/account/profile' class="text-sm-start text-reset"><b>My account</b></a>
+                <br>
+                {{#ifStr lcAuthUser.role 1}}
+                <a href='/league/register' class="text-md-start text-reset">Đăng ký giải đấu</a>
+                {{/ifStr}}
+                {{#ifStr lcAuthUser.role 3}}
+                <a href='/admin/clubAccount' class="text-md-start text-reset">Tạo tài khoản câu lạc bộ</a>
+                <br>
+                <a href='/admin/history' class="text-md-start text-reset">Lịch sử trận đấu</a>
+                <br>
+                <a href='/admin/score' class="text-md-start text-reset">Cập nhật điểm</a>
+                {{/ifStr}}
+                <br>
+                <a href='/league/notification' class="text-lg-start text-reset ">Thông báo</a>
+            </div>
+            <div class="col-sm-6 border border-success rounded ">
+                <b>MY PROFILE</b></br>
+                Manage profile information for account security</br>
+                <form method = "POST" action = "">
+                <div class="mb-3 row mt-4">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Fullname</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="fullname" id="staticUsername" value="{{lcAuthUser.fullname}}">
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Email</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="email" id="staticEmail" value="{{lcAuthUser.email}}">
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Phone</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="phone" id="staticPhone" value="{{lcAuthUser.phone}}">
+                    </div>
+                </div>
+                {{#ifStr lcAuthUser.role 1 }}
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Manager</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="manager" id="staticManager" value="{{lcAuthUser.manager}}">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Stadium</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="stadium" id="staticManager" value="{{lcAuthUser.stadium}}">
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>President</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="president" id="staticPresident" value="{{lcAuthUser.president}}">
+                    </div>
+                </div>
+                {{/ifStr}}
+                <div class="col-sm-6 mx-auto mb-4">
+                    <button class="btn btn-lg btn-block btn-primary" type="submit">Save</button>
+                </div>
+                </form>
+            </div>    
+                        
+        </div>    
+</div>
+
+
+

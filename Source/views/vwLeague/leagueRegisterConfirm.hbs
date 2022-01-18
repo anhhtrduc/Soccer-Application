@@ -1,0 +1,128 @@
+<div class='container'>
+    <div class='row'>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-2'>
+            <a href='/account/profile' class='text-sm-start text-reset'>My
+                account</a>
+            <br />
+            <a href='/league/register' class='text-md-start text-reset'><b>
+                    Đăng ký giải đấu
+                </b></a>
+            <br />
+            <a
+                href='/league/notification'
+                class='text-lg-start text-reset'
+            >Thông báo</a>
+        </div>
+
+        <div class='col-sm-8'>
+            <div
+                class='row p-3 mb-2 text-dark rounded-3 mt-3'
+                style='background-color: rgb(245, 239, 239)'
+            >
+                <div class='col-sm-4 align-self-center'>
+                    <img
+                        src='../../{{Leagues.avatar}}'
+                        alt=''
+                        style='width:40px'
+                    />
+                    <b>{{Leagues.name}}</b>
+                </div>
+
+                <div class='col-sm-3 align-self-center'>
+                    <ion-icon name='time-outline'></ion-icon>{{Leagues.date}}
+                </div>
+
+                <div class='col-sm-2 align-self-center'>
+                    <ion-icon name='location-outline'></ion-icon>
+                    {{Leagues.location}}
+                </div>
+                <div class='col-sm-3 align-self-center'>
+                    <span>View details
+                        <ion-icon
+                            name='arrow-forward-outline'
+                            color='primary'
+                        ></ion-icon></span>
+                </div>
+            </div>
+
+            <div
+                class='row p-3 mt-3'
+                style='background-color: rgb(245, 239, 239)'
+            >
+                <form method='post' action=''>
+
+                    <div class='row mt-2'>
+                        <div class='col-sm-5 text-end align-self-center'>
+                            <b>Manager:</b>
+                        </div>
+                        <div class='col-sm-7'>
+                            <input
+                                type='text'
+                                name='manager'
+                                class='form-control-plaintext border border-dark'
+                                id='staticManager'
+                                value='{{lcAuthUser.manager}}'
+                            />
+                        </div>
+                    </div>
+
+                    <div class='row mt-2'>
+                        <div class='col-sm-5 text-end align-self-center'>
+                            <b>Stadium:</b>
+                        </div>
+                        <div class='col-sm-7'>
+                            <input
+                                type='text'
+                                name='stadium'
+                                class='form-control-plaintext border border-dark'
+                                id='staticStadium'
+                                value='{{lcAuthUser.stadium}}'
+                            />
+                        </div>
+                    </div>
+                    <div class='row mt-2'>
+                        <div class='col-sm-5 text-end align-self-center'>
+                            <b>President:</b>
+                        </div>
+                        <div class='col-sm-7'>
+                            <input
+                                type='text'
+                                name='stadium'
+                                class='form-control-plaintext border border-dark'
+                                id='staticStadium'
+                                value='{{lcAuthUser.president}}'
+                            />
+                        </div>
+                    </div>
+
+                    <div class='row mt-2 mx-auto text-center'>
+                        <b>XÁC NHẬN THAM GIA</b>
+                    </div>
+
+                    <div class='row mt-2'>
+                        <div class='col-sm-2'></div>
+                        <div class='col-sm align-self-center'>
+                            <button
+                                class='btn btn-success rounded'
+                                type='submit'
+                            >
+                                Accept
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {{#if noti}}
+                <div class='alert alert-success mt-4 text-center' role='alert'>
+                    {{noti}}
+                </div>
+            {{/if}}
+            {{#if err}}
+                <div class='alert alert-danger mt-4 text-center' role='alert'>
+                    {{err}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

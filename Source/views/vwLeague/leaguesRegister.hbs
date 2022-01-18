@@ -1,0 +1,62 @@
+<div class='container fluid'>
+    <div class='row'>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-2'>
+            <a href='/account/profile' class='text-sm-start text-reset'>My
+                account
+            </a>
+            <br />
+            {{#ifStr lcAuthUser.role 1}}
+                <a href='/league/register' class='text-md-start text-reset'>
+                    <b>Đăng ký giải đấu</b>
+                </a>
+            {{/ifStr}}
+            {{#ifStr lcAuthUser.role 3}}
+                <a href='/admin/history' class='text-md-start text-reset'><b>
+                        Lịch sử trận đấu
+                    </b></a>
+            {{/ifStr}}
+
+            <br />
+            <a
+                href='/league/notification'
+                class='text-lg-start text-reset'
+            >Thông báo</a>
+        </div>
+        <div class='col-sm-6'>
+            <div class='col-sm-2'>
+                <h4>Leagues</h4>
+            </div>
+            <table class='table'>
+                <tbody>
+                    {{#each this.Leagues as |L|}}
+                        <tr>
+                            <td><img
+                                    src='../../{{L.avatar}}'
+                                    alt='blah'
+                                    style='width: 40px'
+                                />{{L.name}}</td>
+                            <td class='text-muted'><ion-icon
+                                    name='time-outline'
+                                ></ion-icon>
+                                {{L.date}}</td>
+                            <td class='text-muted'><ion-icon
+                                    name='location-outline'
+                                ></ion-icon>
+                                {{L.location}}</td>
+                            <td class='text-muted'><a
+                                    href='/league/register/{{L.name}}'
+                                >
+                                    View details
+                                    <ion-icon
+                                        name='arrow-forward-outline'
+                                        color='primary'
+                                    ></ion-icon>
+                                </a></td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

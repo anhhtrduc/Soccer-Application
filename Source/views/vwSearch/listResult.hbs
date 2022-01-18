@@ -1,0 +1,23 @@
+<table class='table'>
+    <thead class='thead-dark'>
+        <tr>
+            <th scope='col'>#</th>
+            <th scope='col'>Team1</th>
+            <th scope='col'></th>
+            <th scope='col'>Team2</th>
+            <th scope='col'>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each searchArray as |R|}}
+            <tr>
+                <th scope='row'>1</th>
+                <td>{{R.team1.name}}</td>
+                <th scope='col'>vs</th>
+                <td>{{R.team2.name}}</td>
+                <td><a href='/search/{{R.team1.name}}&{{R.team2.name}}'>View
+                        Details</a></td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

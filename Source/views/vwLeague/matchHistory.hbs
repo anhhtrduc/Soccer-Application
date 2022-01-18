@@ -1,0 +1,154 @@
+<div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-1">
+                <a href='/account/profile' class="text-sm-start text-reset">My account</a>
+                <br>
+                {{#ifStr lcAuthUser.role 1}}
+                <a href='/league/register' class="text-md-start text-reset">Đăng ký giải đấu</a>
+                {{/ifStr}}
+                {{#ifStr lcAuthUser.role 3}}
+                <a href='/admin/clubAccount' class="text-md-start text-reset">Tạo tài khoản câu lạc bộ</a>
+                <br>
+                <a href='/admin/history' class="text-md-start text-reset"><b>Lịch sử trận đấu</b></a>
+                {{/ifStr}}
+                <br>
+                <a href='/league/notification' class="text-lg-start text-reset ">Thông báo</a>
+            </div>
+            <div class="col-sm-5 border border-success rounded ">
+                <form method = "POST" action = "">
+               
+                <div class="mb-3 row mt-2">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Video Highlight</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="video" id="staticUsername" >
+                    </div>
+                </div>
+                <div class="mb-3 row mt-2">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Team 1</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="team_1" id="staticUsername" >
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Số bàn thắng của team 1</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="goal_1" id="staticEmail" >
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Thẻ vàng của team 1</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="yc_1" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Thẻ đỏ của team 1</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="rc_1" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Số lần việt vị</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="offside_1" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Số lần phạt góc</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="corner_1" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Số lần phạm lỗi</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="foul_1" id="staticPhone" >
+                    </div>
+                </div>
+               <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Số lần dứt điểm</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="attemp_1" id="staticPhone" >
+                    </div>
+                </div>
+               <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Điểm của team 1</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="score_1" id="staticPhone" >
+                    </div>
+                </div>
+            </div>    
+            
+            <div class="col-sm-5 ml-3 border border-success rounded ">
+                <b> </b></br></br></br>
+                <div class="mb-3 row mt-2">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Team 2</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="team_2" id="staticUsername" >
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Số bàn thắng của team 2</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="goal_2" id="staticEmail" >
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Thẻ vàng của team 2</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="yc_2" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Thẻ đỏ của team 2</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="rc_2" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Số lần việt vị</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="offside_2" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Số lần phạt góc</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="corner_2" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Số lần phạm lỗi</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="foul_2" id="staticPhone" >
+                    </div>
+                </div>
+               <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Số lần dứt điểm</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="attemp_2" id="staticPhone" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Điểm của team 2</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="score_2" id="staticPhone" >
+                    </div>
+                </div>
+               
+            </div>    
+        </div>
+        <div class="col-sm-6 mx-auto mt-4 ">
+            <button class="btn btn-lg btn-block btn-primary" type="submit">Save</button>
+        </div>
+        
+        </form>           
+    </div>
+</div>    
+            
+
+

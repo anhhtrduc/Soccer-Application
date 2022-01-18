@@ -1,0 +1,26 @@
+<div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-1">
+                <a href='/account/profile' class="text-sm-start text-reset">My account</a>
+                <br>
+                {{#ifStr lcAuthUser.role 1}}
+                <a href='/league/register' class="text-md-start text-reset">Đăng ký giải đấu</a>
+                {{/ifStr}}
+                {{#ifStr lcAuthUser.role 3}}
+                <a href='/admin/clubAccount' class="text-md-start text-reset">Tạo tài khoản câu lạc bộ</a>
+                <br>
+                <a href='/admin/history' class="text-md-start text-reset"><b>Lịch sử trận đấu</b></a>
+                {{/ifStr}}
+                <br>
+                <a href='/league/notification' class="text-lg-start text-reset ">Thông báo</a>
+            </div>
+           
+    {{#if noti}}
+    <div class="alert alert-success mt-4 text-center" role="alert">
+        {{noti}}
+    </div>
+    {{/if}}
+</div>    
+            
+
+

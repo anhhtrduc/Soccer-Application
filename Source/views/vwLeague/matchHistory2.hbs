@@ -1,0 +1,157 @@
+<div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-1">
+                <a href='/account/profile' class="text-sm-start text-reset">My account</a>
+                <br>
+                {{#ifStr lcAuthUser.role 1}}
+                <a href='/league/register' class="text-md-start text-reset">Đăng ký giải đấu</a>
+                {{/ifStr}}
+                {{#ifStr lcAuthUser.role 3}}
+                <a href='/admin/clubAccount' class="text-md-start text-reset">Tạo tài khoản câu lạc bộ</a>
+                <br>
+                <a href='/admin/history' class="text-md-start text-reset"><b>Lịch sử trận đấu</b></a>
+                {{/ifStr}}
+                <br>
+                <a href='/league/notification' class="text-lg-start text-reset ">Thông báo</a>
+            </div>
+            <div class="col-sm-5 border border-success rounded ">
+                <b>Match History</b></br>
+                <form method = "POST" action = "/admin/history/confirm/{{newResult._id}}">
+                <div class="mb-3 row mt-2">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Team 1</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="team_1" id="staticUsername" 
+                      value="{{newResult.team1.name}}"
+                      >
+                    </div>
+                </div>
+                {{#ifStr newResult.team1.goal 1}}
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player_1" id="staticEmail" >
+                    </div>
+                </div>
+                {{/ifStr}}
+                {{#ifStr newResult.team1.goal 2}}
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player_1" id="staticEmail" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player_2" id="staticEmail" >
+                    </div>
+                </div>
+                {{/ifStr}}
+                {{#ifStr newResult.team1.goal 3}}
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player_1" id="staticEmail" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player_2" id="staticEmail" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player_3" id="staticEmail" >
+                    </div>
+                </div>
+                {{/ifStr}}
+                {{#ifStr newResult.team1.redcard 1}}
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Cầu thủ bị thẻ đỏ</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="rc_1" id="staticPhone" >
+                    </div>
+                </div>
+                {{/ifStr}}
+            </div>    
+<div class="col-sm-5 ml-3 border border-success rounded ">
+                <b>Match History</b></br>
+                <div class="mb-3 row mt-2">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Team 2</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="team_2" id="staticUsername" 
+                      value="{{newResult.team2.name}}"
+                      >
+                    </div>
+                </div>
+
+                {{#ifStr newResult.team2.goal 1}}
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player2_1" id="staticEmail" >
+                    </div>
+                </div>
+                {{/ifStr}}
+                {{#ifStr newResult.team2.goal 2}}
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player2_1" id="staticEmail" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player2_2" id="staticEmail" >
+                    </div>
+                </div>
+                {{/ifStr}}
+                {{#ifStr newResult.team2.goal 3}}
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player2_1" id="staticEmail" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player2_2" id="staticEmail" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label "><b>Cầu thủ ghi bàn</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="player2_3" id="staticEmail" >
+                    </div>
+                </div>
+                {{/ifStr}}
+                {{#ifStr newResult.team2.redcard 1}}
+
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label"><b>Cầu thủ bị thẻ đỏ</b></label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control-plaintext border-bottom" name="rc_2" id="staticPhone" >
+                    </div>
+                </div>
+                {{/ifStr}}
+            </div>    
+        </div>    
+        <div class="col-sm-6 mx-auto mt-4 ">
+                    <button class="btn btn-lg btn-block btn-primary" type="submit">Save</button>
+                </div>
+                 </form>
+                 
+    </div>
+    {{#if noti}}
+    <div class="alert alert-success mt-4 text-center" role="alert">
+        {{noti}}
+    </div>
+    {{/if}}
+</div>    
+            
+
+

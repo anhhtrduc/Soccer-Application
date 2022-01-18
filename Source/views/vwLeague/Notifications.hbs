@@ -1,0 +1,77 @@
+<div class='container'>
+    <div class='row'>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-2'>
+            <a href='/account/profile' class='text-sm-start text-reset'>My
+                account</a>
+            <br />
+            {{#ifStr lcAuthUser.role 1}}
+                <a href='/league/register' class='text-md-start text-reset'>Đăng
+                    ký giải đấu</a>
+            {{/ifStr}}
+            {{#ifStr lcAuthUser.role 3}}
+                <a href='/admin/clubAccount' class='text-md-start text-reset'><b
+                    >Tạo tài khoản câu lạc bộ</b></a>
+                <br />
+                <a href='/admin/history' class='text-md-start text-reset'>Lịch
+                    sử trận đấu</a>
+                <br />
+                <a href='/admin/score' class='text-md-start text-reset'>Cập nhật
+                    điểm</a>
+            {{/ifStr}}
+            <br />
+            <a href='/league/notification' class='text-lg-start text-reset'><b
+                >Thông báo</b></a>
+        </div>
+        <div class='col-sm-6'>
+            <div class='row'>
+                <i class='fas fa-bell fa-3x'></i>
+            </div>
+            <tbody>
+                <div
+                    class='row p-3 mb-2 text-dark rounded-3 mt-3'
+                    style='background-color: rgb(245, 239, 239)'
+                >
+                    <div class='col-sm-1'>
+                        <img
+                            src='https://upload.wikimedia.org/wikipedia/vi/6/6b/UEFA_CHAMPIONS_LEAGUE.png'
+                            alt=''
+                            width='40'
+                            height='40'
+                        />
+                    </div>
+
+                    <div class='col-sm-4 align-self-center'>
+                        <b>UEFA CHAMPIONS LEAGUE 2020</b>
+                    </div>
+
+                    <div class='col-sm-7 align-self-center'>
+                        Bạn là nhà vô địch của giải đấu này
+                    </div>
+                </div>
+
+                <div
+                    class='row p-3 mb-2 text-dark rounded-3 mt-3'
+                    style='background-color: rgb(245, 239, 239)'
+                >
+                    <div class='col-sm-1'>
+                        <img
+                            src='https://upload.wikimedia.org/wikipedia/vi/6/6b/UEFA_CHAMPIONS_LEAGUE.png'
+                            alt=''
+                            width='40'
+                            height='40'
+                        />
+                    </div>
+
+                    <div class='col-sm-4 align-self-center'>
+                        <b>UEFA CHAMPIONS LEAGUE 2020</b>
+                    </div>
+
+                    <div class='col-sm-7 align-self-center'>
+                        Bạn là nhà vô địch của giải đấu này
+                    </div>
+                </div>
+            </tbody>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class='container fluid'>
+    <div class='row'>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-8'>
+            <div class='col-sm-2'>
+                <h4>Leagues</h4>
+            </div>
+            <table class='table'>
+                <tbody>
+                    {{#each this.Leagues as |L|}}
+                        <tr>
+                            <td><img
+                                    src='../../{{L.avatar}}'
+                                    alt='blah'
+                                    style='width: 40px'
+                                />{{L.name}}</td>
+                            <td class='text-muted'><ion-icon
+                                    name='time-outline'
+                                ></ion-icon>
+                                {{L.date}}</td>
+                            <td class='text-muted'><ion-icon
+                                    name='location-outline'
+                                ></ion-icon>
+                                {{L.location}}</td>
+                            <td class='text-muted'><a
+                                    href='/statistic/leagueStatistic/{{L.name}}'
+                                >
+                                    View details
+                                    <ion-icon
+                                        name='arrow-forward-outline'
+                                        color='primary'
+                                    ></ion-icon>
+                                </a></td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
